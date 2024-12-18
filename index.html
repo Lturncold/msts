@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div id="nav-top">
+      <div id="logo" class="nav-div">
+        <a href="#" class="nav-link">Logo</a>
+      </div>
+      <div id="nav-bar" class="nav-div">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#introPage" class="nav-link">About</a>
+        <a href="#portfolioPage" class="nav-link">Portfolio</a>
+        <a href="#contactUsPage" class="nav-link">Contact Us</a>
+      </div>
+    </div>
+
+    <div id="welcomePage" class="page-nav">
+      <div id="welcomeContent">
+        <div id="welcomeWriteup">
+          <h1>Welcome to MS Tech Stack Hideout!</h1>
+          <p>
+            Developers can find useful resources, modular codes, documentation
+            templates and testing checklist here. For anyone else, be inspired
+            by real use cases and feel free to contact us to collaborate!
+          </p>
+          <div id="welcome-nav">
+            <a href="#introPage" id="learnMoreLink">Learn More</a>
+            <a href="#contactUsPage" id="contactLink">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="filesDirectory">
+        <div id="files-nav">
+          <div class="link-wrapper">
+            <a href="#" >
+              <img src="assets/img/Kickstart.png" alt="Kickstart MSTS" class="image-link"/>
+            </a>
+            <div class="caption">Kickstart MSTS</div>
+          </div>
+          <div class="link-wrapper"> 
+            <a href="#" >
+              <img src="assets/img/Library 2.png" alt="KM" class="image-link"/>
+            </a>
+            <div class="caption">KM Document</div>
+          </div> 
+          <div class="link-wrapper">  
+            <a href="#" >
+              <img src="assets/img/kanban.png" alt="Backlog & Changelog" class="image-link"/>
+            </a>
+            <div class="caption">Backlog & Changelog</div>
+          </div>
+          <div class="link-wrapper"> 
+            <a href="#" >
+              <img src="assets/img/checklist.png" alt="Testing Checklist" class="image-link" />
+            </a>
+            <div class="caption">Testing Guide & Checklist</div>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+
+    <div id="introPage" class="page-nav">
+      <div id="introContent">
+        <h2>Does your process look like this?</h2>
+        <div id="image-wrapper">
+          <img src="assets/img/messy.png" alt="messy process" class="image-intro" id="messyImg"/>
+          <img src="assets/img/inefficient.png" alt="inefficient process" class="image-intro" id="ineffImg"/>            
+        </div>
+        <h2 class="led-text">Then MS Tech Stack could be the solution for you!</h2>
+      </div>
+    </div>
+
+    <div id="portfolioPage" class="page-nav">
+      <div id="portfolio-div">
+        <div id="portfolioContainer">
+          <div id="portfolioIntro">
+            <h2 class="portfolio-intro">Be Inspired.</h2>
+            <p class="portfolio-intro">
+              Learn what MSTS is about from existing projects.
+            </p>
+          </div>
+        </div>
+        <div id="portfolioSamples">
+          <a href="#" class="sample">Item 1</a>
+          <a href="#" class="sample">Item 2</a>
+          <a href="#" class="sample">Item 3</a>
+          <a href="#" class="sample">Item 4</a>
+          <a href="#" class="sample">Item 5</a>
+          <a href="#" class="sample">Item 6</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="contactUsPage" class="page-nav">
+      <div id="contact-wrapper">
+        <h1>Build with us.</h1>
+        <div id="line"></div>
+        <p>Think you might have a use case? Join us in this journey!</p>
+        <div id="contact-link-wrapper">
+          <a href="#" id="contactLink">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("wheel", function (e) {
+        e.preventDefault();
+        const sections = document.querySelectorAll(".page-nav");
+        const currentScroll =
+          window.scrollY || document.documentElement.scrollTop;
+        const viewportHeight = window.innerHeight;
+
+        // Determine the current section
+        let currentIndex = Math.round(currentScroll / viewportHeight);
+
+        // Adjust the index based on scroll direction
+        if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+          currentIndex++;
+        } else if (e.deltaY < 0 && currentIndex > 0) {
+          currentIndex--;
+        }
+
+        const targetPosition = currentIndex * viewportHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

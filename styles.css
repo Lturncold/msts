@@ -1,0 +1,345 @@
+/* global effects */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* color: rgba(255, 253, 130, 1); */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 5vw;
+}
+
+h2 {
+  font-size: 3vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+#welcomePage,
+#introPage,
+#portfolioPage,
+#contactUsPage {
+  height: 100vh;
+  border: 1px solid black;
+}
+
+/* top nav bar css */
+#nav-top {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 49, 66, 1) 0%,
+    rgba(11, 49, 66, 0) 100%
+  );
+  /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+}
+
+#nav-top a {
+  font-size: 1.5vw;
+  color: black;
+}
+
+.nav-div {
+  padding-top: 3vh;
+}
+
+#logo {
+  padding-left: 15vw;
+}
+
+#logo a {
+  padding: 10px 10px;
+}
+
+#nav-bar {
+  width: 100%;
+  align-items: right;
+  text-align: right;
+  justify-content: right;
+  padding-right: 3vw;
+}
+
+#nav-bar a {
+  padding: 10px 10px;
+}
+
+/* welcome page css */
+
+#welcomeContent {
+  display: grid;
+  height: 75vh;
+}
+
+#welcomeWriteup {
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#welcomeWriteup h1 {
+  margin-top: 20vh;
+  margin-bottom: 5vh;
+}
+
+#welcomeWriteup p {
+  width: 40vw;
+  margin: 0 auto;
+  font-size: 1.3vw;
+}
+
+#welcome-nav {
+  margin-top: 5vh;
+}
+
+#welcome-nav a {
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 1vw;
+  padding: 10px 15px;
+  margin: 0 5px;
+  color: black;
+}
+
+#welcome-nav a:hover {
+  background-color: black;
+  color: white;
+}
+
+#files-nav {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+  height: 25vh;
+  border-top: 1px solid black;
+  padding-top: 3vh;
+}
+
+.image-link {
+  padding: 0px 1.5vw;
+  width: 7vw;
+  transition: width 0.3s ease;
+}
+
+.link-wrapper:hover .image-link {
+  width: 10vw;
+}
+
+.link-wrapper:hover .caption {
+  opacity: 0; /* Hide caption on hover */
+  visibility: hidden; /* Ensure caption is not accessible */
+}
+
+.link-wrapper {
+  /* height: 13vh; */
+}
+
+.image-link img {
+  /* height: 13vh; */
+  /* width: 7vw; */
+}
+
+.caption {
+  width: 7vw;
+  font-size: 1vw;
+  margin: 0 auto;
+  transition: opacity 0.3s ease;
+  color: #333;
+}
+
+/* intro page css */
+
+#introContent {
+  margin: 0 10vw;
+  margin-top: 15vh;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-intro {
+  margin: 0 5vw;
+  width: auto;
+}
+
+#messyImg {
+  height: 50vh;
+}
+
+#ineffImg {
+  height: 30vh;
+}
+
+@keyframes colorChange {
+  0% {
+    color: red;
+  }
+  20% {
+    color: orange;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: green;
+  }
+  80% {
+    color: blue;
+  }
+  100% {
+    color: purple;
+  }
+}
+.led-text {
+  background-color: black;
+  font-weight: bold;
+  animation: colorChange 3s infinite; /* Duration of 3 seconds, looping infinitely */
+}
+
+/* Be inspired css */
+
+#portfolioPage {
+  /* display:flex; */
+}
+
+#portfolio-div {
+  display: flex;
+  height: 100%;
+}
+
+#portfolioContainer {
+  width: 40vw;
+  margin: 15vh 1vw 5vh 3vw;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#portfolioIntro {
+  margin-top: 30vh;
+}
+
+.portfolio-intro {
+  margin-left: 4vw;
+}
+
+#portfolioSamples {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60vw;
+  margin: 15vh 1vw 5vh 3vw;
+}
+
+.sample {
+  flex: 1 1 calc(33.333% - 10px); /* Base width for three columns with some space between */
+  margin: 5px; /* Adjust margin as needed */
+  box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+/* contact us css */
+
+#contact-wrapper{
+  margin: auto 25vw;
+  margin-top: 15vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 45vh;
+  border: 1px solid black;
+  border-radius: 40px;
+}
+
+#line{
+  border: 1px solid black;
+  width: 20vw;
+  margin: 0 auto;
+  margin-top: -4vh;
+  margin-bottom: 4vh;
+}
+
+#contact-wrapper p{
+  width: 40vw;
+  margin: 0 auto;
+  font-size: 1.3vw;
+}
+
+#contact-link-wrapper{
+  margin-top: 5vh;
+
+}
+
+#contact-link-wrapper a{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2vh 2vw;
+  font-size: 1vw;
+  color: black;
+}
+
+#contact-link-wrapper a:hover{
+  background-color: black;
+  color: white;
+}
+
+/* Responsive css */
+
+@media (min-width: 1200px) {
+  #welcome-nav a {
+    /* font-size: 2vw; */
+  }
+}
+
+@media (max-width: 1000px) {
+  /* when screen size reduces */
+  #welcome-nav a {
+    font-size: 1.5vw;
+  }
+
+  #welcomeWriteup p {
+    font-size: 1.8vw;
+  }
+
+  .sample {
+    flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
+  }
+
+  #line{
+    margin-top: 0;
+  }
+
+  #contact-wrapper p{
+    font-size: 2.3vw;
+  }
+
+  #contact-link-wrapper a{
+    font-size: 2vw;
+  }
+}
